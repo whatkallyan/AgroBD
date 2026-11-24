@@ -6,6 +6,7 @@ import Login from './Login';
 import AboutUs from './AboutUs';
 import CropsHub from './CropsHub';
 import Diseases from './Diseases';
+import SearchResults from './SearchResults';
 import { Fertilizers, Chemicals, Guidelines, Market } from './ExtraModules';
 
 function App() {
@@ -18,6 +19,13 @@ function App() {
 
       {currentPage === 'home' && (
         <Home setCurrentPage={setCurrentPage} setSearchQuery={setSearchQuery} />
+      )}
+      {currentPage === 'search' && (
+        <SearchResults
+          setCurrentPage={setCurrentPage}
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+        />
       )}
       {currentPage === 'login' && <Login setCurrentPage={setCurrentPage} />}
       {currentPage === 'about' && <AboutUs setCurrentPage={setCurrentPage} />}

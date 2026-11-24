@@ -9,13 +9,7 @@ function Home({ setCurrentPage, setSearchQuery }) {
     if (!query) return;
 
     setSearchQuery(query);
-    const lower = query.toLowerCase();
-    
-    if (lower.includes('blight') || lower.includes('rot') || lower.includes('disease') || lower.includes('leaf')) {
-      setCurrentPage('diseases');
-    } else {
-      setCurrentPage('crops');
-    }
+    setCurrentPage('search');
   };
 
   return (
@@ -31,7 +25,7 @@ function Home({ setCurrentPage, setSearchQuery }) {
         <form className="search-box" onSubmit={handleSearch}>
           <input
             type="text"
-            placeholder="Search for Crops, diseases, fertilizers, chemicals..."
+            placeholder="Search Rice, Potato, Mango, Blight, Ridomil, Khulna..."
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
           />
